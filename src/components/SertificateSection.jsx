@@ -21,10 +21,10 @@ function SertificateSection () {
 		  <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-28">
 		    {/* Title */}
 		    <h2 className="text-center text-3xl font-bold md:text-5xl dark:text-slate-100">
-                Certificate
+                Sertifikat Keahlian
 		    </h2>
 		    <p className="msm:text-base mb-8 mt-4 text-center text-sm text-gray-500 md:mb-12 lg:mb-16 dark:text-slate-100">
-		      Lorem ipsum dolor sit amet elit ut aliquam
+		    	Beberapa Sertifikat dibawah ini yang mendukung keahlian
 		    </p>
 		    {/* Content */}
 		    <div className="grid justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3">

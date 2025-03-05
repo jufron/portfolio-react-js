@@ -19,11 +19,11 @@ function Card ({image, projectName, kategory}) {
                 <p className="mb-4 text-xl font-bold md:text-2xl dark:text-slate-100">
                     {projectName}
                 </p>
-                <div className="flex flex-col items-start text-sm text-gray-500 lg:flex-row lg:items-center dark:text-slate-100">
+                {/* <div className="flex flex-col items-start text-sm text-gray-500 lg:flex-row lg:items-center dark:text-slate-100">
                     <p>Laila Bahar</p>
                     <p className="mx-2 hidden lg:block">-</p>
                     <p>6 mins read</p>
-                </div>
+                </div> */}
             </div>
         </div>
         // <a
@@ -63,10 +63,10 @@ function ProjectSection() {
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <div className="flex flex-col items-center">
                 <h2 className="text-center text-3xl font-bold md:text-5xl dark:text-slate-100">
-                    My Project
+                    Proyek
                 </h2>
                 <p className="mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16 dark:text-slate-100">
-                    Lorem ipsum dolor sit amet elit ut aliquam
+                    Beberapa Contoh Proyek yang telah saya kerjakan
                 </p>
                 <div className="mb-8 grid gap-5 sm:grid-cols-2 sm:justify-items-stretch md:mb-12 md:grid-cols-3 lg:mb-16 lg:gap-6">
                     {project.map((item, index) => (

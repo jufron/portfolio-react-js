@@ -6,10 +6,9 @@ function ContactSection() {
         {/* Container */}
         <div className="mx-auto max-w-7xl px-5 py-16 text-center md:px-10 md:py-20">
             {/* Component */}
-            <h2 className="text-3xl font-bold md:text-5xl dark:text-slate-100">Contact</h2>
+            <h2 className="text-3xl font-bold md:text-5xl dark:text-slate-100">Kontak</h2>
             <p className="mx-auto mb-8 mt-4 max-w-lg text-gray-500 md:mb-12 lg:mb-16 dark:text-slate-100">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit ut
-                aliquam,purus sit amet luctus magna fringilla urna
+                Untuk Informasi lebih lanjut silahkan kontak dibawah ini
             </p>
             {/* Form */}
             <form name="wf-form-name" method="get" className="md:w-2xl lg:w-4xl mx-auto mb-4 text-left sm:px-4 md:px-20">
