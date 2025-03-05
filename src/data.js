@@ -38,13 +38,13 @@ const urlLinkedin = import.meta.env.VITE_SOCIAL_MEDIA_LINKEDIN_URL;
 const urlGithub = import.meta.env.VITE_SOCIAL_MEDIA_GITHUB_URL;
 
 const menuList = [
-    { name: 'Home' },
-    { name: 'About' },
+    { name: 'Beranda' },
+    { name: 'Tentang' },
     // { name: 'Experience' },
-    { name: 'Skills' }, // belum ditandai
-    { name: 'Certificate' },
-    { name: 'Project' },
-    { name: 'Contact' } // belum ditandai
+    { name: 'Keahlian' }, // belum ditandai
+    { name: 'Sertifikat' },
+    { name: 'Proyek' },
+    { name: 'Kontak' } // belum ditandai
 ];
 
 const socialMediaLinks = [

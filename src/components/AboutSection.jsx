@@ -15,7 +15,7 @@ function AboutSection() {
                     />
                 </div>
                 <div className="order-1 md:order-2 md:col-span-1 lg:col-span-2 xl:col-span-3">
-                    <h1 className="mb-6 text-4xl font-semibold md:text-5xl dark:text-slate-100">About</h1>
+                    <h1 className="mb-6 text-4xl font-semibold md:text-5xl dark:text-slate-100">Tentang</h1>
                     <p className="mb-6 max-w-xl md:w-full text-md text-gray-500 md:mb-10 lg:mb-12 dark:text-slate-100 leading-7">
                         Lulusan S1 Komputer dengan pengetahuan mendalam di bidang Teknologi Informasi. Saya memiliki keahlian khusus dalam desain grafis dan pemrograman, dua bidang yang saling melengkapi untuk menciptakan solusi kreatif dan efektif. Selama studi dan pengalaman profesional saya, saya telah mengasah kemampuan saya dalam berbagai aspek desain dan pengembangan, dari menciptakan antarmuka pengguna yang intuitif hingga mengembangkan aplikasi yang kompleks dan efisien.
                     </p>
