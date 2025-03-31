@@ -2,7 +2,7 @@ import React from 'react';
 
 function ContactSection() {
   return (
-    <section className='dark:bg-slate-900' id='contact'>
+    <section className='dark:bg-slate-900' name='kontak'>
         {/* Container */}
         <div className="mx-auto max-w-7xl px-5 py-16 text-center md:px-10 md:py-20">
             {/* Component */}

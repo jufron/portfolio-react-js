@@ -1,11 +1,10 @@
 import { project } from './../data';
 
 
-function Card ({image, projectName, kategory}) {
+function Card ({image, projectName, kategory, tackStack}) {
     return (
         <div className="flex flex-col gap-4 px-4 py-8 md:p-0">
             <img
-                // src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
                 src={image}
                 alt="project-image"
                 className="h-60 object-cover rounded-xl dark:brightness-50"
@@ -19,11 +18,17 @@ function Card ({image, projectName, kategory}) {
                 <p className="mb-4 text-xl font-bold md:text-2xl dark:text-slate-100">
                     {projectName}
                 </p>
-                {/* <div className="flex flex-col items-start text-sm text-gray-500 lg:flex-row lg:items-center dark:text-slate-100">
-                    <p>Laila Bahar</p>
-                    <p className="mx-2 hidden lg:block">-</p>
-                    <p>6 mins read</p>
-                </div> */}
+                <div className="flex gap-4 items-start flex-wrap text-sm text-gray-500 lg:flex-row lg:items-center dark:text-slate-100">
+                    {console.log(tackStack)}
+                    {tackStack.map((tect, index) => (
+                        <img
+                            key={index}
+                            src={tect.icon}
+                            alt={`name-${tect.name}`} 
+                            className="inline-block h-5 xl:h-7 w-5 xl:w-7 object-cover" 
+                        />
+                    ))}
+                </div>
             </div>
         </div>
         // <a
@@ -35,7 +40,6 @@ function Card ({image, projectName, kategory}) {
         //             console.log("Link diklik!");
         //         }}
         //     >
-
         // </a>
     );
 }
@@ -59,7 +63,7 @@ function ButtonLink () {
 
 function ProjectSection() {
   return (
-    <section id="project" className="bg-slate-50 dark:bg-slate-800">
+    <section name="proyek" className="bg-slate-50 dark:bg-slate-800">
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <div className="flex flex-col items-center">
                 <h2 className="text-center text-3xl font-bold md:text-5xl dark:text-slate-100">
@@ -75,6 +79,7 @@ function ProjectSection() {
                             image={item.image}
                             projectName={item.projectName}
                             kategory={item.kategory}
+                            tackStack={item.techStack}
                         />
                     ))}
                 </div>

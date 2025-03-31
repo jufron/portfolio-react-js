@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import AOS from 'aos';
 import './App.css';
 import AboutSection from './components/AboutSection';
 import ExperientSection from './components/ExperientSection';
@@ -21,8 +22,12 @@ function App({theme}) {
     }
   }, [theme]);
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (  
-    <div className=''>
+    <>
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -33,7 +38,7 @@ function App({theme}) {
       <ContactSection />
       <Footer />
       <ButtonToTop />
-    </div>
+    </>
   );
 }
 

@@ -1,14 +1,18 @@
 import LinkSocialMedia from "./subComponents/LinkSocialMedia";
 import { socialMediaLinks } from '../data';
 import { menuList } from "../data";
+import { Link } from "react-scroll";
 
 function LinkItemMenu ({ item }) {
     return (
-        <a 
-            href={`#${item.name.toLowerCase()}`} 
-            className="inline-block px-4 py-2 font-normal text-black transition hover:text-green-400 dark:text-slate-100">
+        <Link
+            to={item.name.toLowerCase()}
+            smooth={true}
+            duration={500}
+            className="inline-block px-4 py-2 font-normal text-black transition hover:text-green-400 dark:text-slate-100"
+        >
             {item.name}
-        </a>
+        </Link>
     );
 }
 

@@ -5,10 +5,10 @@ import { socialMediaLinks } from '../data';
 
 const HeroSection = () => {
   return (
-    <header className="bg-white dark:bg-slate-900" id='home'>
+    <header className="bg-white dark:bg-slate-900" name='beranda'>
       <div className="container px-6 mx-auto">
         <div className="items-center flex flex-col lg:flex-row gap-5">
-          <div className="w-full lg:w-1/2 pb-20 lg:pb-0 order-2 md:order-1">
+          <div data-aos="fade-up" className="w-full lg:w-1/2 pb-20 lg:pb-0 order-2 md:order-1">
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-semibold dark:text-slate-100">
               Halo, saya
             </h1>
@@ -24,7 +24,7 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-          <div className="flex items-center justify-center w-full lg:mt-0 lg:w-1/2 order-1 md:order-2">
+          <div data-aos="fade-up" className="flex items-center justify-center w-full lg:mt-0 lg:w-1/2 order-1 md:order-2">
             <img
               className="w-full h-full lg:max-w-3xl"
               src={imagePoster}

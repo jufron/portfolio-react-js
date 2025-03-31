@@ -128,7 +128,7 @@ function MobileMenuContent () {
         {menuList.map((item, index) => (
           <Link
             key={index}
-            to={`${item.name.toLowerCase()}`}
+            to={item.name.toLowerCase()}
             smooth={true}
             duration={500}
             className="text-gray-900 hover:text-green-400 block px-3 py-2 rounded-md text-base font-medium dark:text-slate-100 cursor-pointer"

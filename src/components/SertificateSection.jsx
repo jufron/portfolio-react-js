@@ -16,7 +16,7 @@ function SertificateCard ({ data }) {
 
 function SertificateSection () {
 	return (
-		<section className="dark:bg-slate-900" id="certificate">
+		<section className="dark:bg-slate-900" name="sertifikat">
 		  {/* Container */}
 		  <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-28">
 		    {/* Title */}

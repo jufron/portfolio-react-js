@@ -2,7 +2,7 @@ import imageAbout from './../assets/img/about.jpg?format=webp&quality=70';
 
 function AboutSection() {
   return (
-    <section className="bg-slate-50 dark:bg-slate-800" id="about">
+    <section className="bg-slate-50 dark:bg-slate-800" name="tentang">
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20 xl:py-48">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 items-center gap-4 sm:gap-10">
 

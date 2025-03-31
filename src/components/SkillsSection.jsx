@@ -1,12 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { skills } from "../data";
 
-
 function SkillCondition ({status, icon}) {
     if (status === 'icon') {
         return (
             <FontAwesomeIcon icon={icon} size="2x" />
         )
+    } else if (status === 'svg') {
+        return (
+            <img
+                src={icon}
+                alt="icon" 
+                className="inline-block h-10 w-10 object-cover" 
+            />
+        );
     } else if (status === 'img') {
         return (
             <img
@@ -35,7 +42,7 @@ function SkillItemMenu ({name, icon, status}) {
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="bg-slate-100 dark:bg-slate-800">
+    <section name="keahlian" className="bg-slate-100 dark:bg-slate-800">
         {/* Container */}
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             {/* Title */}

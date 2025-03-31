@@ -32,6 +32,25 @@ import imageSertifikatDicodingAws from './assets/img/sertifikat/dicoding-aws.jpg
 import imageSertifikatDicodingBe from './assets/img/sertifikat/dicoding-beck-end.jpg?format=webp&quality=70';
 import imageSertifikatDicodingJs from './assets/img/sertifikat/dicoding-js.jpg?format=webp&quality=70';
 
+// ? svg
+import htmlSvgIcon from './assets/svg/html-5-svgrepo-com.svg';
+import cssSvgIcon from './assets/svg/css-3-svgrepo-com.svg';
+import jsSvgIcon from './assets/svg/javascript-svgrepo-com.svg';
+import nodeJsSvgIcon from './assets/svg/node-js-svgrepo-com.svg';
+import phpSvgIcon from './assets/svg/php-svgrepo-com.svg';
+import tailwindCssSvgIcon from './assets/svg/tailwind-svgrepo-com.svg';
+import bootstrapSvgIcon from './assets/svg/bootstrap-svgrepo-com.svg';
+import laravelSvgIcon from './assets/svg/laravel-svgrepo-com.svg';
+import reactSvgIcon from './assets/svg/react-svgrepo-com.svg';
+import gitSvgIcon from './assets/svg/git-svgrepo-com.svg';
+import githubSvgIcon from './assets/svg/github-142-svgrepo-com.svg';
+import mysqlSvgIcon from './assets/svg/mysql-logo-svgrepo-com.svg';
+import psgrsqlSvgIcon from './assets/svg/postgresql-svgrepo-com.svg';
+import alphineJsSvgIcon from './assets/svg/Alpine.js.svg';
+import astroSvgIcon from './assets/svg/astro-svgrepo-com.svg';
+import jquerySvgIcon from './assets/svg/jquery-1-logo-svgrepo-com.svg';
+
+
 const urlFacebook = import.meta.env.VITE_SOCIAL_MEDIA_FACEBOOK_URL;
 const urlInstagram = import.meta.env.VITE_SOCIAL_MEDIA_INSTAGRAM_URL;
 const urlLinkedin = import.meta.env.VITE_SOCIAL_MEDIA_LINKEDIN_URL;
@@ -73,53 +92,53 @@ const socialMediaLinks = [
 const skills = [
     {
         name: 'HTML',
-        status: 'icon',
-        icon:  faHtml5
+        status: 'svg',
+        icon:  htmlSvgIcon
     },
     {
         name: 'CSS',
-        status: 'icon',
-        icon: faCss3Alt
+        status: 'svg',
+        icon: cssSvgIcon
     },
     {
         name: 'Javascript',
-        status: 'icon',
-        icon: faJs
+        status: 'svg',
+        icon: jsSvgIcon
     },
     {
         name: 'Node Js',
-        status: 'icon',
-        icon: faNode
+        status: 'svg',
+        icon: nodeJsSvgIcon
     },
     {
         name: 'PHP',
-        status: 'icon',
-        icon: faPhp
+        status: 'svg',
+        icon: phpSvgIcon
     },
     {
         name: 'Tailwind CSS',
-        status: 'img',
-        icon: imageTailwind
+        status: 'svg',
+        icon: tailwindCssSvgIcon
     },
     {
         name: 'Bootstrap',
-        status: 'icon',
-        icon: faBootstrap
+        status: 'svg',
+        icon: bootstrapSvgIcon
     },
     {
         name: 'Laravel',
-        status: 'icon',
-        icon: faLaravel
+        status: 'svg',
+        icon: laravelSvgIcon
     },
     {
         name: 'React Js',
-        status: 'icon',
-        icon: faReact
+        status: 'svg',
+        icon: reactSvgIcon
     },
     {
         name: 'Git',
-        status: 'icon',
-        icon: faGitAlt
+        status: 'svg',
+        icon: gitSvgIcon
     },
     {
         name: 'Github',
@@ -128,13 +147,23 @@ const skills = [
     },
     {
         name: 'MySQL',
-        status: 'icon',
-        icon: faDatabase
+        status: 'svg',
+        icon: mysqlSvgIcon
     },
     {
         name: 'PsgrSQL',
-        status: 'icon',
-        icon: faDatabase
+        status: 'svg',
+        icon: psgrsqlSvgIcon
+    },
+    {
+        name: 'Alphine Js',
+        status: 'svg',
+        icon: alphineJsSvgIcon
+    },
+    {
+        name: 'Astro Js',
+        status: 'svg',
+        icon: astroSvgIcon
     },
 ]
 
@@ -173,15 +202,39 @@ const project = [
         techStack: [
             {
                 name: 'HTML',
-                icon: 'icon'
+                icon: htmlSvgIcon
             },
             {
                 name: 'CSS',
-                icon: 'icon'
+                icon: cssSvgIcon
             },
             {
-                name: 'Firebase',
-                icon: 'icon'
+                name: 'javascript',
+                icon: jsSvgIcon
+            },
+            {
+                name: 'bootstrap',
+                icon: bootstrapSvgIcon
+            },
+            {
+                name: 'tailwindCSS',
+                icon: tailwindCssSvgIcon
+            },
+            {
+                name: 'alphine js',
+                icon: alphineJsSvgIcon
+            },
+            {
+                name: 'Laravel',
+                icon: laravelSvgIcon
+            },
+            {
+                name: 'Git',
+                icon: gitSvgIcon
+            },
+            {
+                name: 'Github',
+                icon: githubSvgIcon
             }
         ]
     },
@@ -190,6 +243,34 @@ const project = [
         projectName: 'Web Application Retur Barang',
         kategory: 'profesional',
         techStack: [
+            {
+                name: 'HTML',
+                icon: htmlSvgIcon
+            },
+            {
+                name: 'CSS',
+                icon: cssSvgIcon
+            },
+            {
+                name: 'javascript',
+                icon: jsSvgIcon
+            },
+            {
+                name: 'jquery',
+                icon: jquerySvgIcon
+            },
+            {
+                name: 'bootstrap',
+                icon: bootstrapSvgIcon
+            },
+            {
+                name: 'Laravel',
+                icon: laravelSvgIcon
+            },
+            {
+                name: 'Github',
+                icon: githubSvgIcon
+            }
         ]
     },
     {
@@ -197,6 +278,34 @@ const project = [
         projectName: 'Web Application Kenaikan Pangkat',
         kategory: 'profesional',
         techStack: [
+            {
+                name: 'HTML',
+                icon: htmlSvgIcon
+            },
+            {
+                name: 'CSS',
+                icon: cssSvgIcon
+            },
+            {
+                name: 'javascript',
+                icon: jsSvgIcon
+            },
+            {
+                name: 'jquery',
+                icon: jquerySvgIcon
+            },
+            {
+                name: 'bootstrap',
+                icon: bootstrapSvgIcon
+            },
+            {
+                name: 'Laravel',
+                icon: laravelSvgIcon
+            },
+            {
+                name: 'Github',
+                icon: githubSvgIcon
+            }
         ]
     },
     {
@@ -204,6 +313,34 @@ const project = [
         projectName: 'Web Application Arsip Berkas',
         kategory: 'profesional',
         techStack: [
+            {
+                name: 'HTML',
+                icon: htmlSvgIcon
+            },
+            {
+                name: 'CSS',
+                icon: cssSvgIcon
+            },
+            {
+                name: 'javascript',
+                icon: jsSvgIcon
+            },
+            {
+                name: 'jquery',
+                icon: jquerySvgIcon
+            },
+            {
+                name: 'bootstrap',
+                icon: bootstrapSvgIcon
+            },
+            {
+                name: 'Laravel',
+                icon: laravelSvgIcon
+            },
+            {
+                name: 'Github',
+                icon: githubSvgIcon
+            }
         ]
     },
 ]
