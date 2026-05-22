@@ -1,24 +1,38 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
-function ButtonWhatsApp () {
+// 1. Tombol WhatsApp (Liquid Glass - Emerald Accent)
+function ButtonWhatsApp() {
   return (
-    <button
-      className="fixed bottom-5 right-5 transition duration-500 bg-green-400 hover:bg-green-500 text-white rounded-xl px-4 py-3 flex items-center justify-center"
+    <a
+      href="https://wa.me/6281234567890" // Ganti dengan nomor Anda
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Hubungi via WhatsApp"
+      className="group relative flex shrink-0 aspect-square items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-white/80 dark:border-white/10 shadow-[0_8px_32px_0_rgba(16,185,129,0.15)] dark:shadow-[0_8px_32px_0_rgba(16,185,129,0.2)] transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:border-emerald-300 dark:hover:border-emerald-500/50 overflow-hidden"
     >
-      <FontAwesomeIcon icon={faWhatsapp} size='lg' />
-    </button>
+      {/* Inner Glow Gradien Hijau saat di-hover */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-tr from-emerald-400/20 to-teal-400/20 pointer-events-none"></div>
+
+      <FontAwesomeIcon
+        icon={faWhatsapp}
+        className="text-2xl md:text-3xl text-emerald-500 dark:text-emerald-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors drop-shadow-sm relative z-10"
+      />
+    </a>
   );
 }
 
+// 2. Main Component (Wadah & Tombol Scroll to Top)
 function ButtonToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 0) {
+      // Mengubah angka 0 menjadi 100 agar tombol tidak langsung muncul 
+      // saat baru di-scroll sedikit (memberikan kesan transisi lebih natural)
+      if (window.pageYOffset > 100) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -38,15 +52,32 @@ function ButtonToTop() {
   }
 
   return (
-    <>
+    // Wadah fleksibel di pojok kanan bawah. 
+    // pointer-events-none memastikan area kosong di sekitar tombol tidak menghalangi klik ke elemen di bawahnya
+    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[90] flex flex-col gap-3 md:gap-4 items-center pointer-events-none">
+      
+      {/* Tombol Back to Top (Liquid Glass - Neutral Accent) */}
       <button
-          className={`fixed bottom-15 right-5 transition-opacity duration-500 bg-gray-800 dark:border-1 dark:border-white text-white rounded-xl px-4 py-3 flex items-center justify-center mb-4 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-          onClick={backToTop}
-        >
-          <FontAwesomeIcon icon={faChevronUp} size='lg' />
+        onClick={backToTop}
+        aria-label="Kembali ke atas"
+        className={`group relative flex shrink-0 aspect-square items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-lg transition-all duration-500 overflow-hidden pointer-events-auto
+          ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+      >
+        {/* Inner Glow Abu-abu lembut saat di-hover */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-tr from-slate-200/40 to-white/10 dark:from-slate-700/40 dark:to-white/5 pointer-events-none"></div>
+
+        <FontAwesomeIcon 
+          icon={faChevronUp} 
+          className="text-lg md:text-xl text-slate-600 dark:text-slate-300 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 group-hover:-translate-y-0.5 transition-all duration-300 relative z-10" 
+        />
       </button>
-      <ButtonWhatsApp />
-    </>
+
+      {/* Membungkus ButtonWhatsApp untuk mengembalikan fungsi klik (pointer-events-auto) */}
+      <div className="pointer-events-auto">
+        <ButtonWhatsApp />
+      </div>
+      
+    </div>
   );
 }
 

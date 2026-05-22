@@ -22,6 +22,8 @@ import imageReturBarang from './assets/img/project/web-retur-barang.png?format=w
 import imageKenaikanPangkat from './assets/img/project/web-kenaikan-pangkat.png?format=webp&quality=70';
 import imageArsipBerkas from './assets/img/project/web-arsip-berkas.png?format=webp&quality=70';
 
+import imageArsipDokumenPemohonKTP from './assets/img/project/web-arsip-dokumen-pemohon-ktp.jpg?format=webp&quality=70';
+
 import imageSertifikatDicodingDasarWeb from './assets/img/sertifikat/dicoding-dasar-web.jpg?format=webp&quality=70';
 import imageSertifikatUdemyPhp from './assets/img/sertifikat/udemy-php.jpeg?format=webp&quality=70';
 import imageSertifikatUdemyJs from './assets/img/sertifikat/udemy-js.jpg?format=webp&quality=70';
@@ -311,6 +313,41 @@ const project = [
     {
         image: imageArsipBerkas,
         projectName: 'Web Application Arsip Berkas',
+        kategory: 'profesional',
+        techStack: [
+            {
+                name: 'HTML',
+                icon: htmlSvgIcon
+            },
+            {
+                name: 'CSS',
+                icon: cssSvgIcon
+            },
+            {
+                name: 'javascript',
+                icon: jsSvgIcon
+            },
+            {
+                name: 'jquery',
+                icon: jquerySvgIcon
+            },
+            {
+                name: 'bootstrap',
+                icon: bootstrapSvgIcon
+            },
+            {
+                name: 'Laravel',
+                icon: laravelSvgIcon
+            },
+            {
+                name: 'Github',
+                icon: githubSvgIcon
+            }
+        ]
+    },
+    {
+        image: imageArsipDokumenPemohonKTP,
+        projectName: 'KTP application archive application website',
         kategory: 'profesional',
         techStack: [
             {
