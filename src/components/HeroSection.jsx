@@ -5,7 +5,7 @@ import LinkSocialMedia from "./subComponents/LinkSocialMedia";
 
 const HeroSection = () => {
   return (
-    <header className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-[#0B0F19] transition-colors duration-300">
+    <header className="relative -z-10 min-h-screen flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-[#0B0F19] transition-colors duration-300">
       
       {/* 1. Latar Belakang Liquid / Mesh Gradient */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
