@@ -1,16 +1,16 @@
-import { 
-    faFacebookF, 
-    faInstagram, 
-    faLinkedinIn, 
+import {
+    faFacebookF,
+    faInstagram,
+    faLinkedinIn,
     faGithub,
     faReact,
     faGitAlt,
-    faLaravel, 
-    faHtml5, 
-    faCss3Alt, 
-    faJs, 
-    faNode, 
-    faPhp, 
+    faLaravel,
+    faHtml5,
+    faCss3Alt,
+    faJs,
+    faNode,
+    faPhp,
     faBootstrap
 } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
@@ -84,10 +84,10 @@ const socialMediaLinks = [
         iconName: faLinkedinIn,
         className: "text-sky-700 hover:text-white hover:bg-[#0077B5]",
     },
-    { 
+    {
         href: urlGithub,
-        iconName: faGithub, 
-        className: "text-gray-800 dark:text-gray-600 hover:text-white hover:bg-[#333]" 
+        iconName: faGithub,
+        className: "text-gray-800 dark:text-gray-600 hover:text-white hover:bg-[#333]"
     },
 ];
 
@@ -95,7 +95,7 @@ const skills = [
     {
         name: 'HTML',
         status: 'svg',
-        icon:  htmlSvgIcon
+        icon: htmlSvgIcon
     },
     {
         name: 'CSS',
@@ -391,7 +391,7 @@ const languages = {
     },
     en: {
         heroSection: [
-            'Hi there, I am', 
+            'Hi there, I am',
             'm an experienced Full-Stack Developer with 2+ years of expertise in building robust web applications and crafting visually appealing designs. Proficient in Laravel and React JS, I bring together the power of code and creativity to deliver seamless digital experiences.'
         ],
     }
