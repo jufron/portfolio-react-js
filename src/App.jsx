@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AOS from 'aos';
 import './App.css';
-import AboutSection from './components/AboutSection';
-import ExperientSection from './components/ExperientSection';
-import Footer from './components/Footer';
-import HeroSection from './components/HeroSection';
 import Navbar from './components/Navbar';
-import ProjectSection from './components/ProjectSection';
-import SertificateSection from './components/SertificateSection';
-import SkillsSection from './components/SkillsSection';
-import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 import ButtonToTop from './components/subComponents/ButtonToTop';
+
+// Pages
+import Home from './pages/Home';
+import AboutDetail from './pages/AboutDetail';
+import CertificateDetail from './pages/CertificateDetail';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App({theme}) {
   useEffect(() => {
@@ -27,19 +27,19 @@ function App({theme}) {
   }, []);
 
   return (  
-    <>
+    <Router>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      {/* <ExperientSection /> */}
-      <SkillsSection />
-      <SertificateSection />
-      <ProjectSection />
-      <ContactSection />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-detail" element={<AboutDetail />} />
+        <Route path="/certificate-detail" element={<CertificateDetail />} />
+        <Route path="/project-detail" element={<ProjectDetail />} />
+      </Routes>
       <Footer />
       <ButtonToTop />
-    </>
+    </Router>
   );
 }
 
-export default App
+export default App;
+

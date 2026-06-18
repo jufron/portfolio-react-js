@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 // 1. Tombol WhatsApp (Liquid Glass - Emerald Accent)
 function ButtonWhatsApp() {
   return (
     <a
-      href="https://wa.me/6281234567890" // Ganti dengan nomor Anda
+      href="https://wa.me/6282147554549"
       target="_blank"
       rel="noopener noreferrer"
       title="Hubungi via WhatsApp"
@@ -24,14 +24,31 @@ function ButtonWhatsApp() {
   );
 }
 
-// 2. Main Component (Wadah & Tombol Scroll to Top)
+// 2. Tombol Email (Liquid Glass - Red/Gmail Accent)
+function ButtonEmail() {
+  return (
+    <a
+      href="mailto:jufrontamoama@gmail.com"
+      title="Hubungi via Email"
+      className="group relative flex shrink-0 aspect-square items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-white/80 dark:border-white/10 shadow-[0_8px_32px_0_rgba(239,68,68,0.15)] dark:shadow-[0_8px_32px_0_rgba(239,68,68,0.2)] transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:border-red-350 dark:hover:border-red-500/50 overflow-hidden"
+    >
+      {/* Inner Glow Gradien Merah saat di-hover */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-tr from-red-400/20 to-orange-400/20 pointer-events-none"></div>
+
+      <FontAwesomeIcon
+        icon={faEnvelope}
+        className="text-2xl md:text-3xl text-red-500 dark:text-red-400 group-hover:text-red-600 dark:group-hover:text-red-300 transition-colors drop-shadow-sm relative z-10"
+      />
+    </a>
+  );
+}
+
+// 3. Main Component (Wadah & Tombol Scroll to Top)
 function ButtonToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // Mengubah angka 0 menjadi 100 agar tombol tidak langsung muncul 
-      // saat baru di-scroll sedikit (memberikan kesan transisi lebih natural)
       if (window.pageYOffset > 100) {
         setIsVisible(true);
       } else {
@@ -40,7 +57,6 @@ function ButtonToTop() {
     };
 
     window.addEventListener('scroll', toggleVisibility);
-
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -52,8 +68,6 @@ function ButtonToTop() {
   }
 
   return (
-    // Wadah fleksibel di pojok kanan bawah. 
-    // pointer-events-none memastikan area kosong di sekitar tombol tidak menghalangi klik ke elemen di bawahnya
     <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[90] flex flex-col gap-3 md:gap-4 items-center pointer-events-none">
       
       {/* Tombol Back to Top (Liquid Glass - Neutral Accent) */}
@@ -72,7 +86,12 @@ function ButtonToTop() {
         />
       </button>
 
-      {/* Membungkus ButtonWhatsApp untuk mengembalikan fungsi klik (pointer-events-auto) */}
+      {/* Membungkus ButtonEmail untuk mengembalikan fungsi klik */}
+      <div className="pointer-events-auto">
+        <ButtonEmail />
+      </div>
+
+      {/* Membungkus ButtonWhatsApp untuk mengembalikan fungsi klik */}
       <div className="pointer-events-auto">
         <ButtonWhatsApp />
       </div>

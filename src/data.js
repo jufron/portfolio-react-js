@@ -13,7 +13,7 @@ import {
     faPhp,
     faBootstrap
 } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import imageTailwind from './assets/img/tailwind.256x154.png?format=webp&quality=70';
 
 
@@ -21,8 +21,10 @@ import imageProfileKampus from './assets/img/project/web-profile-kampus.png?form
 import imageReturBarang from './assets/img/project/web-retur-barang.png?format=webp&quality=70';
 import imageKenaikanPangkat from './assets/img/project/web-kenaikan-pangkat.png?format=webp&quality=70';
 import imageArsipBerkas from './assets/img/project/web-arsip-berkas.png?format=webp&quality=70';
-
 import imageArsipDokumenPemohonKTP from './assets/img/project/web-arsip-dokumen-pemohon-ktp.jpg?format=webp&quality=70';
+
+import imageProfileSmkUyelindo from './assets/img/project/Coklat Gradient Generasi 90 Wallpaper Desktop.png?format=webp&quality=70';
+import imageCascadingKinerja from './assets/img/project/Blue Simple Minimalist Sunday Sermon Church Presentation.png?format=webp&quality=70';
 
 import imageSertifikatDicodingDasarWeb from './assets/img/sertifikat/dicoding-dasar-web.jpg?format=webp&quality=70';
 import imageSertifikatUdemyPhp from './assets/img/sertifikat/udemy-php.jpeg?format=webp&quality=70';
@@ -88,6 +90,11 @@ const socialMediaLinks = [
         href: urlGithub,
         iconName: faGithub,
         className: "text-gray-800 dark:text-gray-600 hover:text-white hover:bg-[#333]"
+    },
+    {
+        href: "mailto:jufrontamoama@gmail.com",
+        iconName: faEnvelope,
+        className: "text-red-500 hover:text-white hover:bg-[#EA4335]"
     },
 ];
 
@@ -172,7 +179,7 @@ const skills = [
 const certificate = [
     {
         image: imageSertifikatDicodingReact,
-        title: 'Pemrograman PHP Pemula sampai Mahir'
+        title: 'Belajar Membuat Aplikasi Web dengan React'
     },
     {
         image: imageSertifikatUdemyPhp,
@@ -188,13 +195,25 @@ const certificate = [
     },
     {
         image: imageSertifikatDicodingAi,
-        title: 'Dasar AI'
+        title: 'Belajar Dasar-Dasar AI'
     },
     {
         image: imageSertifikatDicodingBe,
-        title: 'Membuat Aplikasi Beck-end Pemula'
+        title: 'Belajar Membuat Aplikasi Back-End untuk Pemula'
     },
-]
+    {
+        image: imageSertifikatDicodingDasarWeb,
+        title: 'Belajar Dasar Pemrograman Web'
+    },
+    {
+        image: imageSertifikatDicodingAws,
+        title: 'Belajar Dasar Cloud dengan AWS'
+    },
+    {
+        image: imageSertifikatDicodingJs,
+        title: 'Belajar Dasar Pemrograman JavaScript'
+    }
+];
 
 const project = [
     {
@@ -346,6 +365,45 @@ const project = [
         ]
     },
     {
+        image: imageProfileSmkUyelindo,
+        projectName: 'Web Profile Sekolah SMK Uyelindo & PPDB',
+        kategory: 'profesional',
+        techStack: [
+            {
+                name: 'HTML',
+                icon: htmlSvgIcon
+            },
+            {
+                name: 'CSS',
+                icon: cssSvgIcon
+            },
+            {
+                name: 'javascript',
+                icon: jsSvgIcon
+            },
+            {
+                name: 'bootstrap',
+                icon: bootstrapSvgIcon
+            },
+            {
+                name: 'Laravel',
+                icon: laravelSvgIcon
+            },
+            {
+                name: 'MySQL',
+                icon: mysqlSvgIcon
+            },
+            {
+                name: 'Git',
+                icon: gitSvgIcon
+            },
+            {
+                name: 'Github',
+                icon: githubSvgIcon
+            }
+        ]
+    },
+    {
         image: imageArsipDokumenPemohonKTP,
         projectName: 'KTP application archive application website',
         kategory: 'profesional',
@@ -373,6 +431,45 @@ const project = [
             {
                 name: 'Laravel',
                 icon: laravelSvgIcon
+            },
+            {
+                name: 'Github',
+                icon: githubSvgIcon
+            }
+        ]
+    },
+    {
+        image: imageCascadingKinerja,
+        projectName: 'Web Application Cascading Kinerja',
+        kategory: 'profesional',
+        techStack: [
+            {
+                name: 'HTML',
+                icon: htmlSvgIcon
+            },
+            {
+                name: 'CSS',
+                icon: cssSvgIcon
+            },
+            {
+                name: 'javascript',
+                icon: jsSvgIcon
+            },
+            {
+                name: 'jquery',
+                icon: jquerySvgIcon
+            },
+            {
+                name: 'bootstrap',
+                icon: bootstrapSvgIcon
+            },
+            {
+                name: 'Laravel',
+                icon: laravelSvgIcon
+            },
+            {
+                name: 'MySQL',
+                icon: mysqlSvgIcon
             },
             {
                 name: 'Github',

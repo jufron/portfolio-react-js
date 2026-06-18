@@ -76,16 +76,12 @@ const HeroSection = () => {
 
             <div className="flex flex-col gap-4 w-full sm:w-auto lg:w-full max-w-[220px] xl:max-w-[240px]">
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center w-full px-8 py-4 text-sm font-bold tracking-wide text-white transition-all duration-300 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/20 focus:outline-none"
+                href="https://wa.me/6282147554549?text=Halo%20Jufron,%20saya%20tertarik%20dengan%20portofolio%20Anda"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full px-8 py-4 text-sm font-bold tracking-wide text-white transition-all duration-300 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/20 focus:outline-none cursor-pointer"
               >
                 Hubungi Saya
-              </a>
-              <a
-                href="#projects"
-                className="inline-flex items-center justify-center w-full px-8 py-4 text-sm font-bold tracking-wide text-slate-800 dark:text-white transition-all duration-300 bg-white/40 dark:bg-white/5 border border-white/60 dark:border-white/10 rounded-full hover:bg-white/60 dark:hover:bg-white/10 hover:scale-105 focus:outline-none backdrop-blur-md shadow-sm"
-              >
-                Lihat Portofolio
               </a>
             </div>
 

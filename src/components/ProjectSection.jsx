@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { project } from './../data';
 
 // 1. Komponen Kartu Proyek (Liquid Glass)
@@ -61,16 +62,13 @@ function Card({ image, projectName, kategory, techStack }) {
 // 2. Tombol View More (Disesuaikan dengan gaya Glassmorphism)
 function ButtonLink() {
   return (
-    <a
-      href="#semua-proyek"
-      className="inline-flex items-center justify-center px-8 py-3.5 mt-8 text-sm font-semibold tracking-wide text-white transition-all duration-300 bg-slate-900 dark:bg-emerald-500 dark:text-slate-900 rounded-2xl hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/20 focus:outline-none"
-      onClick={(e) => {
-        e.preventDefault();
-        console.log("View More diklik!");
-      }}
+    <Link
+      to="/project-detail"
+      viewTransition
+      className="inline-flex items-center justify-center px-8 py-4 mt-8 text-sm font-bold tracking-wide text-white transition-all duration-300 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/20 focus:outline-none cursor-pointer"
     >
-      Lihat Lebih Banyak Karya
-    </a>
+      Eksplorasi Proyek Lebih Detail
+    </Link>
   );
 }
 
@@ -102,13 +100,13 @@ function ProjectSection() {
 
         {/* Grid Konten Proyek */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {project.map((item, index) => (
+          {project.slice(0, 6).map((item, index) => (
             <Card
               key={index}
               image={item.image}
               projectName={item.projectName}
               kategory={item.kategory}
-              techStack={item.techStack} // Perbaikan penulisan props
+              techStack={item.techStack}
             />
           ))}
         </div>
