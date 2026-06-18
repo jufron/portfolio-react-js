@@ -56,6 +56,8 @@ function SertificateCardDetail({ data, onZoom }) {
   );
 }
 
+import { motion } from "motion/react";
+
 function CertificateDetail() {
   const [activeModalImg, setActiveModalImg] = useState(null);
 
@@ -74,7 +76,12 @@ function CertificateDetail() {
 
         <div className="container mx-auto max-w-7xl px-6 relative z-10">
           {/* Back Button */}
-          <div className="mb-10">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-10"
+          >
             <Link
               to="/"
               viewTransition
@@ -86,10 +93,15 @@ function CertificateDetail() {
               </svg>
               Kembali ke Beranda
             </Link>
-          </div>
+          </motion.div>
 
           {/* Title */}
-          <div className="flex flex-col items-center text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center text-center mb-16"
+          >
             <span className="text-xs font-bold tracking-widest text-green-600 dark:text-green-400 uppercase mb-3 block">
               Credentials Portfolio
             </span>
@@ -99,34 +111,52 @@ function CertificateDetail() {
             <p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-400 text-lg">
               Berikut adalah daftar lengkap 9 sertifikat kompetensi profesional yang telah saya raih.
             </p>
-          </div>
+          </motion.div>
 
           {/* Certificates Grid (Menampilkan semua 9) */}
           <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {certificate.map((data, index) => (
-              <SertificateCardDetail 
-                key={index} 
-                data={data} 
-                onZoom={setActiveModalImg} 
-              />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+              >
+                <SertificateCardDetail 
+                  data={data} 
+                  onZoom={setActiveModalImg} 
+                />
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Lightbox Modal */}
         {activeModalImg && (
-          <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-            <div className="relative max-w-4xl w-full max-h-[85vh] flex items-center justify-center">
-              <button
-                onClick={() => setActiveModalImg(null)}
-                className="absolute -top-12 right-0 p-2 text-white hover:text-green-400 text-sm font-bold flex items-center gap-2 cursor-pointer focus:outline-none"
-              >
-                Tutup [x]
-              </button>
+          <div 
+            onClick={() => setActiveModalImg(null)}
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer"
+          >
+            {/* Floating close button at the top-right of screen for mobile/desktop accessibility */}
+            <button
+              onClick={() => setActiveModalImg(null)}
+              className="fixed top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white hover:text-green-400 cursor-pointer transition-all duration-300 z-[110] border border-white/10 shadow-lg flex items-center justify-center scale-100 hover:scale-110 active:scale-95"
+              title="Tutup"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <div 
+              className="relative max-w-4xl w-full max-h-[85vh] flex items-center justify-center cursor-pointer"
+            >
               <img
+                onClick={(e) => e.stopPropagation()} // stop propagation only on image click
                 src={activeModalImg}
                 alt="Perbesaran Sertifikat"
-                className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl border border-white/10"
+                className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl border border-white/10 cursor-default"
               />
             </div>
           </div>

@@ -60,6 +60,8 @@ const getCaseStudyData = (name) => {
   };
 };
 
+import { motion, AnimatePresence } from "motion/react";
+
 function ProjectDetail() {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
 
@@ -78,7 +80,12 @@ function ProjectDetail() {
 
       <div className="container mx-auto max-w-5xl px-6 relative z-10">
         {/* Back Button */}
-        <div className="mb-10">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
           <Link
             to="/"
             viewTransition
@@ -90,10 +97,15 @@ function ProjectDetail() {
             </svg>
             Kembali ke Beranda
           </Link>
-        </div>
+        </motion.div>
 
         {/* Title */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center mb-16"
+        >
           <span className="text-xs font-bold tracking-widest text-green-600 dark:text-green-400 uppercase mb-3 block">
             Work Portfolio
           </span>
@@ -103,15 +115,19 @@ function ProjectDetail() {
           <p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-400 text-lg">
             Berikut adalah daftar seluruh proyek perangkat lunak dan studi kasus sistem yang telah saya bangun.
           </p>
-        </div>
+        </motion.div>
 
         {/* Projects List (Daftar List Ke Bawah) */}
         <div className="flex flex-col gap-10 w-full">
           {project.map((data, index) => {
             const details = getCaseStudyData(data.projectName);
             return (
-              <div 
+              <motion.div 
                 key={index} 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group grid grid-cols-1 md:grid-cols-12 gap-8 p-6 md:p-8 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-slate-200/50 dark:border-slate-800/50 shadow-md hover:shadow-xl hover:shadow-green-500/5 transition-all duration-500 items-center text-left"
               >
                 {/* Kiri: Gambar Project (md:col-span-5) */}
@@ -147,7 +163,7 @@ function ProjectDetail() {
                       {data.techStack && data.techStack.map((tech, tIdx) => (
                         <div 
                           key={tIdx} 
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/70 dark:bg-white/5 border border-slate-200/40 dark:border-white/10 shadow-sm"
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/70 dark:bg-white/5 border border-slate-200/40 dark:border-white/10 shadow-sm hover:bg-white dark:hover:bg-white/10 transition-colors duration-300"
                         >
                           <img
                             src={tech.icon}
@@ -168,91 +184,108 @@ function ProjectDetail() {
                     Studi Kasus Lengkap
                   </button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
 
       {/* Case Study Sidebar / Drawer */}
-      {activeCaseStudy && (() => {
-        const details = getCaseStudyData(activeCaseStudy.projectName);
-        return (
-          <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end transition-all duration-300">
-            <div className="absolute inset-0" onClick={() => setActiveCaseStudy(null)}></div>
-            <div className="relative w-full max-w-2xl bg-white dark:bg-[#0B0F19] h-full shadow-2xl border-l border-slate-200 dark:border-slate-800/80 p-6 overflow-y-auto z-10 animate-in slide-in-from-right duration-300 text-left flex flex-col">
+      <AnimatePresence>
+        {activeCaseStudy && (() => {
+          const details = getCaseStudyData(activeCaseStudy.projectName);
+          return (
+            <div className="fixed inset-0 z-50 flex justify-end">
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setActiveCaseStudy(null)}
+                className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
+              />
               
-              <div className="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800/50 pb-5 mb-6">
-                <span className="px-3 py-1 text-[10px] font-bold rounded-full bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 uppercase">
-                  Studi Kasus
-                </span>
-                <button
-                  onClick={() => setActiveCaseStudy(null)}
-                  className="p-2 text-xs font-bold rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 cursor-pointer focus:outline-none"
-                >
-                  Tutup [x]
-                </button>
-              </div>
-
-              <div className="relative w-full overflow-hidden rounded-2xl aspect-video bg-slate-100 dark:bg-slate-900/60 mb-6 border border-black/5 dark:border-white/5">
-                <img
-                  src={activeCaseStudy.image}
-                  alt={activeCaseStudy.projectName}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <h2 className="text-2xl font-extrabold mb-4 text-slate-800 dark:text-white">
-                {activeCaseStudy.projectName}
-              </h2>
-
-              <div className="space-y-6 flex-grow pb-10">
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Ringkasan Proyek</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {details.description}
-                  </p>
+              {/* Drawer Content */}
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                className="relative w-full max-w-2xl bg-white dark:bg-[#0B0F19] h-full shadow-2xl border-l border-slate-200 dark:border-slate-800/80 p-6 overflow-y-auto z-10 text-left flex flex-col"
+              >
+                <div className="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800/50 pb-5 mb-6">
+                  <span className="px-3 py-1 text-[10px] font-bold rounded-full bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 uppercase">
+                    Studi Kasus
+                  </span>
+                  <button
+                    onClick={() => setActiveCaseStudy(null)}
+                    className="p-2 text-xs font-bold rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-300 cursor-pointer focus:outline-none"
+                  >
+                    Tutup [x]
+                  </button>
                 </div>
 
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Fitur Utama</h4>
-                  <ul className="list-disc pl-5 space-y-1.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {details.features.map((feature, fIdx) => (
-                      <li key={fIdx}>{feature}</li>
-                    ))}
-                  </ul>
+                <div className="relative w-full overflow-hidden rounded-2xl aspect-video bg-slate-100 dark:bg-slate-900/60 mb-6 border border-black/5 dark:border-white/5">
+                  <img
+                    src={activeCaseStudy.image}
+                    alt={activeCaseStudy.projectName}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Tantangan Pengembangan</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {details.challenges}
-                  </p>
-                </div>
+                <h2 className="text-2xl font-extrabold mb-4 text-slate-800 dark:text-white">
+                  {activeCaseStudy.projectName}
+                </h2>
 
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Solusi Rekayasa</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {details.solutions}
-                  </p>
-                </div>
+                <div className="space-y-6 flex-grow pb-10">
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Ringkasan Proyek</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {details.description}
+                    </p>
+                  </div>
 
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Teknologi yang Digunakan</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {activeCaseStudy.techStack && activeCaseStudy.techStack.map((tech, tIdx) => (
-                      <div key={tIdx} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200/50 dark:border-white/5">
-                        <img src={tech.icon} alt={tech.name} className="w-3.5 h-3.5 object-contain" />
-                        <span className="text-xs font-medium text-slate-600 dark:text-slate-300">{tech.name}</span>
-                      </div>
-                    ))}
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Fitur Utama</h4>
+                    <ul className="list-disc pl-5 space-y-1.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {details.features.map((feature, fIdx) => (
+                        <li key={fIdx}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Tantangan Pengembangan</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {details.challenges}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Solusi Rekayasa</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {details.solutions}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Teknologi yang Digunakan</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {activeCaseStudy.techStack && activeCaseStudy.techStack.map((tech, tIdx) => (
+                        <div key={tIdx} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200/50 dark:border-white/5">
+                          <img src={tech.icon} alt={tech.name} className="w-3.5 h-3.5 object-contain" />
+                          <span className="text-xs font-medium text-slate-600 dark:text-slate-300">{tech.name}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        );
-      })()}
+          );
+        })()}
+      </AnimatePresence>
       </div>
     </PageTransition>
   );

@@ -230,20 +230,24 @@ const project = [
                 icon: cssSvgIcon
             },
             {
-                name: 'javascript',
+                name: 'JavaScript',
                 icon: jsSvgIcon
             },
             {
-                name: 'bootstrap',
+                name: 'Bootstrap',
                 icon: bootstrapSvgIcon
             },
             {
-                name: 'tailwindCSS',
+                name: 'Tailwind CSS',
                 icon: tailwindCssSvgIcon
             },
             {
-                name: 'alphine js',
+                name: 'Alpine.js',
                 icon: alphineJsSvgIcon
+            },
+            {
+                name: 'PHP',
+                icon: phpSvgIcon
             },
             {
                 name: 'Laravel',
@@ -254,7 +258,7 @@ const project = [
                 icon: gitSvgIcon
             },
             {
-                name: 'Github',
+                name: 'GitHub',
                 icon: githubSvgIcon
             }
         ]
@@ -273,23 +277,35 @@ const project = [
                 icon: cssSvgIcon
             },
             {
-                name: 'javascript',
+                name: 'JavaScript',
                 icon: jsSvgIcon
             },
             {
-                name: 'jquery',
+                name: 'jQuery',
                 icon: jquerySvgIcon
             },
             {
-                name: 'bootstrap',
+                name: 'Bootstrap',
                 icon: bootstrapSvgIcon
+            },
+            {
+                name: 'PHP',
+                icon: phpSvgIcon
             },
             {
                 name: 'Laravel',
                 icon: laravelSvgIcon
             },
             {
-                name: 'Github',
+                name: 'MySQL',
+                icon: mysqlSvgIcon
+            },
+            {
+                name: 'Git',
+                icon: gitSvgIcon
+            },
+            {
+                name: 'GitHub',
                 icon: githubSvgIcon
             }
         ]
@@ -308,23 +324,35 @@ const project = [
                 icon: cssSvgIcon
             },
             {
-                name: 'javascript',
+                name: 'JavaScript',
                 icon: jsSvgIcon
             },
             {
-                name: 'jquery',
+                name: 'jQuery',
                 icon: jquerySvgIcon
             },
             {
-                name: 'bootstrap',
+                name: 'Bootstrap',
                 icon: bootstrapSvgIcon
+            },
+            {
+                name: 'PHP',
+                icon: phpSvgIcon
             },
             {
                 name: 'Laravel',
                 icon: laravelSvgIcon
             },
             {
-                name: 'Github',
+                name: 'MySQL',
+                icon: mysqlSvgIcon
+            },
+            {
+                name: 'Git',
+                icon: gitSvgIcon
+            },
+            {
+                name: 'GitHub',
                 icon: githubSvgIcon
             }
         ]
@@ -343,23 +371,35 @@ const project = [
                 icon: cssSvgIcon
             },
             {
-                name: 'javascript',
+                name: 'JavaScript',
                 icon: jsSvgIcon
             },
             {
-                name: 'jquery',
+                name: 'jQuery',
                 icon: jquerySvgIcon
             },
             {
-                name: 'bootstrap',
+                name: 'Bootstrap',
                 icon: bootstrapSvgIcon
+            },
+            {
+                name: 'PHP',
+                icon: phpSvgIcon
             },
             {
                 name: 'Laravel',
                 icon: laravelSvgIcon
             },
             {
-                name: 'Github',
+                name: 'MySQL',
+                icon: mysqlSvgIcon
+            },
+            {
+                name: 'Git',
+                icon: gitSvgIcon
+            },
+            {
+                name: 'GitHub',
                 icon: githubSvgIcon
             }
         ]
@@ -378,12 +418,16 @@ const project = [
                 icon: cssSvgIcon
             },
             {
-                name: 'javascript',
+                name: 'JavaScript',
                 icon: jsSvgIcon
             },
             {
-                name: 'bootstrap',
+                name: 'Bootstrap',
                 icon: bootstrapSvgIcon
+            },
+            {
+                name: 'PHP',
+                icon: phpSvgIcon
             },
             {
                 name: 'Laravel',
@@ -398,7 +442,7 @@ const project = [
                 icon: gitSvgIcon
             },
             {
-                name: 'Github',
+                name: 'GitHub',
                 icon: githubSvgIcon
             }
         ]
@@ -417,23 +461,35 @@ const project = [
                 icon: cssSvgIcon
             },
             {
-                name: 'javascript',
+                name: 'JavaScript',
                 icon: jsSvgIcon
             },
             {
-                name: 'jquery',
+                name: 'jQuery',
                 icon: jquerySvgIcon
             },
             {
-                name: 'bootstrap',
+                name: 'Bootstrap',
                 icon: bootstrapSvgIcon
+            },
+            {
+                name: 'PHP',
+                icon: phpSvgIcon
             },
             {
                 name: 'Laravel',
                 icon: laravelSvgIcon
             },
             {
-                name: 'Github',
+                name: 'MySQL',
+                icon: mysqlSvgIcon
+            },
+            {
+                name: 'Git',
+                icon: gitSvgIcon
+            },
+            {
+                name: 'GitHub',
                 icon: githubSvgIcon
             }
         ]
@@ -452,16 +508,20 @@ const project = [
                 icon: cssSvgIcon
             },
             {
-                name: 'javascript',
+                name: 'JavaScript',
                 icon: jsSvgIcon
             },
             {
-                name: 'jquery',
+                name: 'jQuery',
                 icon: jquerySvgIcon
             },
             {
-                name: 'bootstrap',
+                name: 'Bootstrap',
                 icon: bootstrapSvgIcon
+            },
+            {
+                name: 'PHP',
+                icon: phpSvgIcon
             },
             {
                 name: 'Laravel',
@@ -472,7 +532,11 @@ const project = [
                 icon: mysqlSvgIcon
             },
             {
-                name: 'Github',
+                name: 'Git',
+                icon: gitSvgIcon
+            },
+            {
+                name: 'GitHub',
                 icon: githubSvgIcon
             }
         ]

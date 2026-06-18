@@ -1,6 +1,7 @@
 import imageAbout from './../assets/img/about.jpg?format=webp&quality=70';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from "motion/react";
 
 function AboutSection() {
   return (
@@ -16,11 +17,17 @@ function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Kolom Gambar */}
-          <div className="lg:col-span-5 relative order-2 lg:order-1 flex justify-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 relative order-2 lg:order-1 flex justify-center"
+          >
             <div className="relative w-full max-w-md aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
               
               {/* Glow di belakang gambar */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-500 rounded-[2.5rem] opacity-20 blur-2xl dark:opacity-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-green-500 to-teal-500 rounded-[2.5rem] opacity-20 blur-2xl dark:opacity-10"></div>
               
               {/* Bingkai Kaca */}
               <div className="relative w-full h-full p-3 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-xl -rotate-2 hover:rotate-0 transition-all duration-500 group overflow-hidden">
@@ -38,10 +45,16 @@ function AboutSection() {
                 ✨ Kreatif & Solutif
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Kolom Konten */}
-          <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left"
+          >
             
             <span className="text-xs font-bold tracking-widest text-green-600 dark:text-green-400 uppercase mb-3 block">
               Get To Know Me
@@ -92,7 +105,7 @@ function AboutSection() {
               </Link>
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
       </div>

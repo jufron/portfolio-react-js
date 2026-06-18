@@ -72,6 +72,8 @@ function ButtonLink() {
   );
 }
 
+import { motion } from "motion/react";
+
 // 3. Main Section
 function ProjectSection() {
   return (
@@ -86,7 +88,13 @@ function ProjectSection() {
       <div className="container mx-auto w-full max-w-7xl px-6 relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center mb-16 md:mb-20"
+        >
           <span className="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase mb-3 block">
             Portfolio
           </span>
@@ -96,25 +104,38 @@ function ProjectSection() {
           <p className="mt-6 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
             Kumpulan studi kasus, eksplorasi, dan proyek aplikasi yang telah saya kembangkan dari ide hingga implementasi.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid Konten Proyek */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {project.slice(0, 6).map((item, index) => (
-            <Card
+            <motion.div
               key={index}
-              image={item.image}
-              projectName={item.projectName}
-              kategory={item.kategory}
-              techStack={item.techStack}
-            />
+              initial={{ opacity: 0, y: 45 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card
+                image={item.image}
+                projectName={item.projectName}
+                kategory={item.kategory}
+                techStack={item.techStack}
+              />
+            </motion.div>
           ))}
         </div>
 
-        {/* Tombol Lihat Selengkapnya (Saya buka dari komentar agar bisa Anda gunakan jika daftar proyek sudah panjang) */}
-        <div className="flex justify-center mt-12">
+        {/* Tombol Lihat Selengkapnya */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex justify-center mt-12"
+        >
           <ButtonLink />
-        </div>
+        </motion.div>
 
       </div>
     </section>

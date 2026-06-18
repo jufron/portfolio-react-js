@@ -45,6 +45,8 @@ function SkillItemMenu({ name, icon, status }) {
   );
 }
 
+import { motion } from "motion/react";
+
 // 3. Main Section
 const SkillsSection = () => {
   return (
@@ -59,7 +61,13 @@ const SkillsSection = () => {
       <div className="container mx-auto w-full max-w-7xl px-6 relative z-10">
         
         {/* Judul Section (Disesuaikan dengan estetika sebelumnya) */}
-        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center mb-16 md:mb-20"
+        >
           <span className="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase mb-3 block">
             Tech Stack
           </span>
@@ -69,17 +77,24 @@ const SkillsSection = () => {
           <p className="mt-6 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
             Berikut adalah teknologi, bahasa pemrograman, dan alat (tools) yang saya kuasai dan gunakan untuk membangun solusi digital.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid Konten */}
         <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {skills.map((item, index) => (
-            <SkillItemMenu 
-              key={index} 
-              name={item.name} 
-              icon={item.icon}
-              status={item.status}
-            />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+            >
+              <SkillItemMenu 
+                name={item.name} 
+                icon={item.icon}
+                status={item.status}
+              />
+            </motion.div>
           ))}
         </div>
 

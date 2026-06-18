@@ -5,6 +5,8 @@ import PageTransition from '../components/subComponents/PageTransition';
 import LinkSocialMedia from '../components/subComponents/LinkSocialMedia';
 import { socialMediaLinks } from '../data';
 
+import { motion } from "motion/react";
+
 function AboutDetail() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -21,7 +23,12 @@ function AboutDetail() {
 
       <div className="container mx-auto max-w-5xl px-6 relative z-10">
         {/* Back Button */}
-        <div className="mb-10">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
           <Link
             to="/"
             viewTransition
@@ -33,11 +40,16 @@ function AboutDetail() {
             </svg>
             Kembali ke Beranda
           </Link>
-        </div>
+        </motion.div>
 
         {/* Hero Section of Detail */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center mb-16">
-          <div className="md:col-span-5 flex justify-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-5 flex justify-center"
+          >
             <div className="relative w-full max-w-xs md:max-w-none aspect-[4/5] p-3 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 shadow-2xl">
               <img
                 src={imageAbout}
@@ -45,8 +57,13 @@ function AboutDetail() {
                 className="w-full h-full object-cover rounded-[2rem]"
               />
             </div>
-          </div>
-          <div className="md:col-span-7 flex flex-col justify-center text-left">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="md:col-span-7 flex flex-col justify-center text-left"
+          >
             <span className="text-xs font-bold tracking-widest text-green-600 dark:text-green-400 uppercase mb-3 block">
               Curriculum Vitae
             </span>
@@ -72,12 +89,18 @@ function AboutDetail() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Detail Cards Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-left">
-          <div className="p-8 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-md">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="p-8 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-md"
+          >
             <div className="w-12 h-12 rounded-2xl bg-green-500/10 dark:bg-green-400/10 flex items-center justify-center text-green-600 dark:text-green-400 text-2xl mb-6">
               🎓
             </div>
@@ -85,9 +108,15 @@ function AboutDetail() {
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
               Meraih gelar Sarjana S1 Teknik Informatika. Selama kuliah, berfokus pada analisis algoritma, arsitektur perangkat lunak, dan interaksi manusia-komputer.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="p-8 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-md">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="p-8 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-md"
+          >
             <div className="w-12 h-12 rounded-2xl bg-teal-500/10 dark:bg-teal-400/10 flex items-center justify-center text-teal-600 dark:text-teal-400 text-2xl mb-6">
               ⚡
             </div>
@@ -95,9 +124,15 @@ function AboutDetail() {
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
               Membangun aplikasi yang tidak hanya andal di sisi backend (kecepatan & skalabilitas), tetapi juga memikat, intuitif, dan responsif dari segi desain frontend.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="p-8 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-md">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="p-8 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-md"
+          >
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 dark:bg-emerald-400/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-2xl mb-6">
               🎨
             </div>
@@ -105,18 +140,30 @@ function AboutDetail() {
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
               Mempunyai antusiasme tinggi pada seni grafis, teori warna, layout grid, dan animasi mikro, yang kemudian diimplementasikan ke dalam kode antarmuka.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Riwayat Pendidikan Timeline Section */}
-        <div className="p-8 md:p-12 rounded-[2.5rem] bg-white/45 dark:bg-slate-900/60 backdrop-blur-lg border border-slate-200/50 dark:border-slate-800/50 shadow-lg mb-12 text-left">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="p-8 md:p-12 rounded-[2.5rem] bg-white/45 dark:bg-slate-900/60 backdrop-blur-lg border border-slate-200/50 dark:border-slate-800/50 shadow-lg mb-12 text-left"
+        >
           <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <span className="text-green-500">■</span> Riwayat Pendidikan
           </h2>
           <div className="space-y-8 relative before:absolute before:inset-0 before:left-[15px] before:w-[2px] before:bg-slate-200 dark:before:bg-slate-800/80">
 
             {/* Pendidikan S1 */}
-            <div className="relative pl-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative pl-10"
+            >
               <div className="absolute left-[8px] top-[6px] w-[16px] h-[16px] rounded-full bg-teal-500 ring-4 ring-teal-500/20 dark:ring-teal-400/10 z-10"></div>
               <span className="text-xs font-bold text-teal-600 dark:text-teal-400">2017 - 2021 | Kampus Swasta</span>
               <h4 className="text-lg font-bold text-slate-850 dark:text-white mt-1">S1 Teknik Informatika</h4>
@@ -124,21 +171,33 @@ function AboutDetail() {
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                 Menyelesaikan studi Sarjana (S1) di kampus swasta dengan fokus pada analisis algoritma, rekayasa perangkat lunak, sistem basis data, dan kecerdasan buatan.
               </p>
-            </div>
+            </motion.div>
 
             {/* Pendidikan SMK */}
-            <div className="relative pl-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative pl-10"
+            >
               <div className="absolute left-[8px] top-[6px] w-[16px] h-[16px] rounded-full bg-emerald-400 ring-4 ring-emerald-400/20 dark:ring-emerald-400/10 z-10"></div>
-              <span className="text-xs font-bold text-emerald-500 dark:text-emerald-400">2014 - 2017 | Sekolah Negeri</span>
+              <span className="text-xs font-bold text-emerald-500 dark:text-emerald-400">2015 - 2017 | Sekolah Negeri</span>
               <h4 className="text-lg font-bold text-slate-850 dark:text-white mt-1">Multimedia</h4>
               <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">SMK Negeri 5 Kupang</p>
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                 Menempuh pendidikan menengah kejuruan negeri di bidang Multimedia. Mempelajari dasar-dasar desain grafis, produksi video, animasi 2D/3D, fotografi, dan dasar desain halaman web.
               </p>
-            </div>
+            </motion.div>
 
             {/* Pendidikan SMP */}
-            <div className="relative pl-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative pl-10"
+            >
               <div className="absolute left-[8px] top-[6px] w-[16px] h-[16px] rounded-full bg-green-500 ring-4 ring-green-500/20 dark:ring-green-400/10 z-10"></div>
               <span className="text-xs font-bold text-green-600 dark:text-green-400">2011 - 2014 | Sekolah Negeri</span>
               <h4 className="text-lg font-bold text-slate-850 dark:text-white mt-1">Sekolah Menengah Pertama</h4>
@@ -146,10 +205,16 @@ function AboutDetail() {
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                 Menyelesaikan pendidikan tingkat menengah pertama negeri dengan fokus pembelajaran akademik dasar dan ekstrakurikuler teknologi informasi dasar.
               </p>
-            </div>
+            </motion.div>
 
             {/* Pendidikan SD */}
-            <div className="relative pl-10">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="relative pl-10"
+            >
               <div className="absolute left-[8px] top-[6px] w-[16px] h-[16px] rounded-full bg-green-400 ring-4 ring-green-400/20 dark:ring-green-400/10 z-10"></div>
               <span className="text-xs font-bold text-green-500 dark:text-green-400">2005 - 2011 | Sekolah Swasta</span>
               <h4 className="text-lg font-bold text-slate-850 dark:text-white mt-1">Sekolah Dasar</h4>
@@ -157,13 +222,19 @@ function AboutDetail() {
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
                 Menempuh pendidikan sekolah dasar swasta yang berorientasi pada pembentukan karakter, nilai-nilai moral/keagamaan, kedisiplinan, serta fondasi dasar ilmu pengetahuan alam dan matematika dasar.
               </p>
-            </div>
+            </motion.div>
 
           </div>
-        </div>
+        </motion.div>
 
         {/* Detailed Timeline Biography Section */}
-        <div className="p-8 md:p-12 rounded-[2.5rem] bg-white/45 dark:bg-slate-900/60 backdrop-blur-lg border border-slate-200/50 dark:border-slate-800/50 shadow-lg mb-12 text-left">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="p-8 md:p-12 rounded-[2.5rem] bg-white/45 dark:bg-slate-900/60 backdrop-blur-lg border border-slate-200/50 dark:border-slate-800/50 shadow-lg mb-12 text-left"
+        >
           <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <span className="text-green-500">■</span> Biografi & Metodologi Kerja
           </h2>
@@ -172,17 +243,17 @@ function AboutDetail() {
               Perjalanan profesional saya dimulai dengan hasrat yang mendalam terhadap teknologi informasi. Sejak menempuh bangku perkuliahan S1 Teknik Informatika, saya menyadari bahwa aplikasi terbaik dilahirkan dari kolaborasi yang erat antara logika rekayasa perangkat lunak dan keindahan desain visual. Hal ini mendorong saya untuk konsisten mengasah keahlian di kedua disiplin tersebut.
             </p>
             <p>
-              Dalam proses pengembangan, saya memprioritaskan metodologi clean code dan best practices. Untuk backend, saya berpengalaman merancang database relasional yang dinormalisasi dengan baik menggunakan SQL (MySQL/PostgreSQL) serta membangun API terstruktur di atas framework Laravel. Untuk frontend, saya memanfaatkan ekosistem React.js dipadukan dengan Tailwind CSS untuk menghasilkan antarmuka komponen yang modular, dinamis, dan berperforma tinggi.
+              Dalam proses pengembangan, saya memprioritaskan metodologi clean code and best practices. Untuk backend, saya berpengalaman merancang database relasional yang dinormalisasi dengan baik menggunakan SQL (MySQL/PostgreSQL) serta membangun API terstruktur di atas framework Laravel. Untuk frontend, saya memanfaatkan ekosistem React.js dipadukan dengan Tailwind CSS untuk menghasilkan antarmuka komponen yang modular, dinamis, dan berperforma tinggi.
             </p>
             <p>
               Dengan ditetapkannya tujuan ke depan sebagai <strong>AI Fullstack Engineer</strong>, saya sedang memperluas spektrum kompetensi dengan mengintegrasikan kecerdasan buatan (Machine Learning, Natural Language Processing, dan API AI) langsung ke dalam alur kerja pengembangan web guna menghadirkan aplikasi yang lebih pintar, terpersonalisasi, dan siap menghadapi kebutuhan masa depan.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   </PageTransition>
-);
+  );
 }
 
 export default AboutDetail;

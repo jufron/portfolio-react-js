@@ -2,6 +2,7 @@ import React from 'react';
 import { socialMediaLinks, languages } from "../data";
 import imagePoster from "../assets/img/hero.png";
 import LinkSocialMedia from "./subComponents/LinkSocialMedia";
+import { motion } from "motion/react";
 
 const HeroSection = () => {
   return (
@@ -22,30 +23,55 @@ const HeroSection = () => {
           {/* --- KOLOM KIRI (Teks): Mengambil 4 Kolom --- */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left order-2 lg:order-1 lg:col-span-4">
 
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-white/40 dark:bg-white/5 border border-white/60 dark:border-white/10 shadow-sm backdrop-blur-md text-sm font-semibold text-slate-700 dark:text-slate-300">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-white/40 dark:bg-white/5 border border-white/60 dark:border-white/10 shadow-sm backdrop-blur-md text-sm font-semibold text-slate-700 dark:text-slate-300"
+            >
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               Halo, saya
-            </div>
+            </motion.div>
 
-            <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white xl:text-7xl mb-4 leading-tight">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white xl:text-7xl mb-4 leading-tight"
+            >
               <span className="block drop-shadow-sm">Jufron</span>
               <span className="block drop-shadow-sm">Tamo Ama</span>
-            </h1>
+            </motion.h1>
 
-            <h2 className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500 mb-6 drop-shadow-sm">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500 mb-6 drop-shadow-sm"
+            >
               AI Fullstack Developer
-            </h2>
+            </motion.h2>
 
-            <p className="max-w-sm text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="max-w-sm text-base text-slate-600 dark:text-slate-400 leading-relaxed"
+            >
               Membangun aplikasi web modern dengan antarmuka yang bersih dan performa tinggi. Berfokus pada pengalaman pengguna.
-            </p>
+            </motion.p>
           </div>
 
           {/* --- KOLOM TENGAH (Gambar): Mengambil 5 Kolom (Paling Besar) --- */}
-          <div className="flex justify-center relative order-1 lg:order-2 w-full lg:col-span-5">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex justify-center relative order-1 lg:order-2 w-full lg:col-span-5"
+          >
 
             {/* Ukuran gambar diperbesar drastis (max-w-[460px]) dengan aspect ratio 4:5 */}
             <div className="relative w-72 sm:w-96 lg:w-full max-w-[460px] aspect-[4/5]">
@@ -69,10 +95,15 @@ const HeroSection = () => {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
           {/* --- KOLOM KANAN (Tombol & Sosmed): Mengambil 3 Kolom --- */}
-          <div className="flex flex-col items-center lg:items-end justify-center order-3 lg:col-span-3 w-full mt-12 lg:mt-0">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col items-center lg:items-end justify-center order-3 lg:col-span-3 w-full mt-12 lg:mt-0"
+          >
 
             <div className="flex flex-col gap-4 w-full sm:w-auto lg:w-full max-w-[220px] xl:max-w-[240px]">
               <a
@@ -93,8 +124,11 @@ const HeroSection = () => {
 
             <div className="flex justify-center lg:justify-end flex-wrap gap-4 mt-8 lg:mt-0 w-full max-w-[220px] xl:max-w-[240px]">
               {socialMediaLinks.map((social, index) => (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.4 + index * 0.08 }}
                   className="flex shrink-0 aspect-square items-center justify-center w-12 h-12 bg-white/40 dark:bg-white/5 border border-white/60 dark:border-white/10 rounded-full backdrop-blur-md transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:border-emerald-200 dark:hover:border-emerald-500/30 group cursor-pointer shadow-sm"
                 >
                   <LinkSocialMedia
@@ -102,11 +136,11 @@ const HeroSection = () => {
                     iconName={social.iconName}
                     className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors"
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
       </div>

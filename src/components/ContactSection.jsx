@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { motion } from "motion/react";
+
 function ContactSection() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden bg-slate-50 dark:bg-[#0B0F19] transition-colors duration-300" name="kontak">
@@ -13,7 +15,13 @@ function ContactSection() {
       <div className="container mx-auto w-full max-w-5xl px-6 relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center mb-12 md:mb-16"
+        >
           <span className="text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase mb-3 block">
             Get In Touch
           </span>
@@ -23,10 +31,16 @@ function ContactSection() {
           <p className="mt-6 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
             Punya pertanyaan, ide kolaborasi, atau tawaran pekerjaan? Jangan ragu untuk mengirimkan pesan melalui form di bawah ini.
           </p>
-        </div>
+        </motion.div>
 
         {/* 2. Glass Form Container */}
-        <div className="max-w-3xl mx-auto p-8 md:p-12 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-white/60 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.2)]">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mx-auto p-8 md:p-12 rounded-[2.5rem] bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-white/60 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.2)]"
+        >
           
           <form name="wf-form-name" method="get" className="space-y-6">
             
@@ -99,7 +113,7 @@ function ContactSection() {
             </div>
 
           </form>
-        </div>
+        </motion.div>
 
       </div>
     </section>
